@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <h1>Add new ingredient.</h1>
+
+      <%= simple_form_for [ @dose, @ingredient ] do |f| %>
+        <%= f.input :ingredient, collection: Ingredient.all, input_html: {  class: 'multiple-select', multiple: true }, include_hidden: false %>
+        <%= f.submit "Select ingredient", class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
