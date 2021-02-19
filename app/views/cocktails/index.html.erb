@@ -12,8 +12,7 @@
     <% @cocktails.each do |cocktail| %>
       <tr>
         <td><%= cocktail.name %></td>
-        <td><%= link_to 'Show', cocktail %> | </td>
-        <td><%= link_to 'Destroy', cocktail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', cocktail %> </td>
       </tr>
     <% end %>
   </tbody>
