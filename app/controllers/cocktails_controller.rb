@@ -1,5 +1,5 @@
 class CocktailsController < ApplicationController
-  before_action :set_cocktail, only: %i[ show edit ]
+  before_action :set_cocktail, only: %i[ show edit destroy]
 
   def index
     @cocktails = Cocktail.all
@@ -24,6 +24,11 @@ class CocktailsController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @cocktail.destroy
+  end
+
   
   private
 
