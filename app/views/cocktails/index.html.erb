@@ -1,8 +1,8 @@
 <div class="container">
 
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row justify-content-between m-3">
     <h1>Mister Cocktail</h1>
-    <h1 class="flex-grow-1"><%= link_to 'New Cocktail', new_cocktail_path %></h1>
+    <div class="p-2"><%= link_to 'New Cocktail', new_cocktail_path, class: 'btn btn-primary' %></div>
   </div>
 
   <div class="d-flex justify-content-center">
@@ -15,12 +15,13 @@
               <h5 class="card-title"><%= cocktail.name %></h5>
             </div>
             <ul class="list-group list-group-flush">
-              <% cocktail.doses.each do |dose| %> 
+              <% cocktail.doses.first(3).each do |dose| %> 
                 <li class="list-group-item">
                   <%= dose.description %>
                   <strong><%= dose.ingredient.name %></strong>
                 </li>
               <% end %>
+                <li class="list-group-item"><strong><%= link_to '...', cocktail %></strong></li>
             </ul>
               <div class="card-body d-flex justify-content-between">
                 <%= link_to 'Show', cocktail %>
